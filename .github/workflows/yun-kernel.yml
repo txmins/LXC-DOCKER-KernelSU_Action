@@ -32,6 +32,7 @@ jobs:
           fetch-depth: 0
     - name: 工作配置
       run: |
+        ls -al
         echo "LXC_DOCKER=$(cat config.env | grep -w "LXC_DOCKER" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "METHOD_OK=$(cat config.env | grep -w "METHOD_OK" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "ENABLE_KVM=$(cat config.env | grep -w "ENABLE_KVM" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
