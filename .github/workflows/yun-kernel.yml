@@ -264,7 +264,7 @@ jobs:
     - name: 检查编译内核生成文件
       run: |
        cd $GITHUB_WORKSPACE/kernel_workspace
-       ls -al out
+       ls -al android-kernel/out/arch/arm64/boot/
        if [ -f android-kernel/out/arch/${{ env.ARCH }}/boot/${{ env.KERNEL_IMAGE_NAME }} ]; then
            echo "CHECK_FILE_IS_OK=true" >> $GITHUB_ENV
        else
