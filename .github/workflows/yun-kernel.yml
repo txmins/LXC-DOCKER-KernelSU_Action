@@ -146,9 +146,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --depth=1
-        ls -al
-        cd $GITHUB_WORKSPACE/kernel_workspace
-        cp android-kernel/arch/arm64/configs/vendor/xiaomi/alioth_config ../../alioth_defconfig
+        cp android-kernel/arch/arm64/configs/vendor/xiaomi/alioth.config ../../alioth_defconfig
     - name: 开启KVM配置
       if: env.ENABLE_KVM == 'true'
       run: |
